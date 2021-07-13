@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema(
     {
@@ -8,7 +10,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, 'email is required'],
             unique: true,
-            trim: true,
+            trim: true, // quitar espacios
             lowercase: true,
             match: [EMAIL_PATTERN, 'email is invalid']
         },
