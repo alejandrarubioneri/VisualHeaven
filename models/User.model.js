@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema(
     {
@@ -25,6 +27,19 @@ const userSchema = new mongoose.Schema(
         timestamps: true
     }
 );
+
+// Encriptado de contraseñas
+userSchema.pre('save', function(next) {
+    if (this.isModified('password')) { // Comprobar si se ha modificado la password
+        bcrypt.hash(this.password, SALT_ROUNDS) // Encriptar la contraseña pasando por las salt rounds
+        .then((hash) => {
+            this.password = hash
+            next()
+        })
+    } else {
+        next()
+    }
+})
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

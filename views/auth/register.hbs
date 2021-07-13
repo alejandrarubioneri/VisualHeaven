@@ -1,6 +1,6 @@
 <h1>Register here</h1>
 
-<form action="/register" method="POST" enctype="multipart/form-data">
+<form action="/register" method="POST" >
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input name="email" value="{{user.email}}" type="email" class="form-control {{#if errors.email}}is-invalid{{/if}}" id="email" required>

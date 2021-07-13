@@ -1,11 +1,13 @@
 const User = require('../models/User.model');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
-// Register
+// Render de register
 module.exports.register = (req,res, next) => {
     res.render('auth/register')
 }
 
+// Registro de usuario con validación
 module.exports.doRegister = (req, res, next) => {
     User.findOne({ email: req.body.email }) // Comprobar que no hay más usuarios con ese mail 
     .then((user) => {
