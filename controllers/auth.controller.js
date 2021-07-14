@@ -29,3 +29,26 @@ module.exports.doRegister = (req, res, next) => {
     })
     .catch(e => next(e))
 }
+
+// Render de Login
+module.exports.login = (req, res, next) => {
+    res.render('auth/login')
+}
+
+module.exports.doLogin = (req, res, next) => {
+    passport.authenticate('local-auth', (error, user, validations) => {
+        if (error) { // Si ha habido un error
+            next(error)
+        } else if (!user) { // Si no hay usuario
+            res.render('auth/login', { user: req.body, errorMessage: validations.error })
+        } else { // Si hay usuario
+            req.login(user, (loginErr) => { // Ejecuta el serializador, logea al usuario y maneja errores si los ha habido
+                if (loginErr) {
+                    next(loginErr)
+                } else {
+                    res.redirect('/')
+                }
+            }) 
+        }
+    })(req, res, next)
+}

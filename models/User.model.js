@@ -41,5 +41,10 @@ userSchema.pre('save', function(next) {
     }
 })
 
+// Comprobar que la contraseña que se está tecleando está en base de datos
+userSchema.methods.checkPassword = function(passwordToCheck) {
+    return bcrypt.compare(passwordToCheck, this.password);
+}
+
 const User = mongoose.model('User', userSchema);
 module.exports = User;
