@@ -28,5 +28,23 @@ const userSchema = new mongoose.Schema(
     }
 );
 
+// Encriptado de contraseñas
+userSchema.pre('save', function(next) {
+    if (this.isModified('password')) { // Comprobar si se ha modificado la password
+        bcrypt.hash(this.password, SALT_ROUNDS) // Encriptar la contraseña pasando por las salt rounds
+        .then((hash) => {
+            this.password = hash
+            next()
+        })
+    } else {
+        next()
+    }
+})
+
+// Comprobar que la contraseña que se está tecleando está en base de datos
+userSchema.methods.checkPassword = function(passwordToCheck) {
+    return bcrypt.compare(passwordToCheck, this.password);
+}
+
 const User = mongoose.model('User', userSchema);
 module.exports = User;
