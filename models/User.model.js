@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema(
             required: [true, 'password is required'],
             minLength: [8, 'password is invalid']
         },
+        fullName: {
+            type: String,
+            required: [true, 'a full name is required']
+        },
         image: {
             type: String
         }
