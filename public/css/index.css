@@ -1,0 +1,10 @@
+.web-cover {
+    background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    padding: 217px 100px;
+}
