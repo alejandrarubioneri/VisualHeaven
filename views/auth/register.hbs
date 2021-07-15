@@ -19,6 +19,16 @@
       </div>
     {{/if}}
   </div>
+    </div>
+    <div class="mb-3">
+    <label for="occupation" class="form-label">Occupation</label>
+    <input name="occupation" value="{{user.occupation}}" type="text" class="form-control {{#if errors.occupation}}is-invalid{{/if}}" id="occupation" required>
+    {{#if errors.occupation}}
+      <div class="invalid-feedback">
+        {{errors.occupation}}
+      </div>
+    {{/if}}
+  </div>
   <div class="mb-3">
     <label for="formFile" class="form-label">Select a file</label>
     <input name="image" type="file" id="formFile" class="form-control" >
