@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, 'email is required'],
             unique: true,
-            trim: true,
+            trim: true, // quitar espacios
             lowercase: true,
             match: [EMAIL_PATTERN, 'email is invalid']
         },
@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, 'password is required'],
             minLength: [8, 'password is invalid']
+        },
+        fullName: {
+            type: String,
+            required: [true, 'a full name is required']
         },
         image: {
             type: String
