@@ -12,6 +12,10 @@ module.exports.doRegister = (req, res, next) => {
     User.findOne({ email: req.body.email }) // Comprobar que no hay más usuarios con ese mail 
     .then((user) => {
         if (!user) { // Si no lo encuentra, lo crea
+            if (req.file) { // Si hay foto, la guarda
+                req.body.image = req.file.path
+            }
+
             User.create(req.body)
             .then(() => {
                 res.redirect('/')
@@ -51,4 +55,10 @@ module.exports.doLogin = (req, res, next) => {
             }) 
         }
     })(req, res, next)
+}
+
+// Logout
+module.exports.logout = (req, res, next) => {
+    req.logout()
+    res.redirect('/login')
 }
