@@ -19,15 +19,16 @@
       </div>
     {{/if}}
   </div>
-    </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="occupation" class="form-label">Occupation</label>
-    <input name="occupation" value="{{user.occupation}}" type="text" class="form-control {{#if errors.occupation}}is-invalid{{/if}}" id="occupation" required>
-    {{#if errors.occupation}}
-      <div class="invalid-feedback">
-        {{errors.occupation}}
-      </div>
-    {{/if}}
+      <select name="jobs" id="job-select">
+        <option value="">Choose your ocuppation</option>
+        <option value="production">Production</option>
+        <option value="direction">Direction</option>
+        <option value="sound">Sound</option>
+        <option value="costume-and-makeup">Costume and makeup</option>
+        <option value="postproduction">Postproduction</option>
+      </select>
   </div>
   <div class="mb-3">
     <label for="formFile" class="form-label">Select a file</label>
