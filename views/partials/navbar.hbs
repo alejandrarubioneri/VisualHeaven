@@ -8,12 +8,12 @@
       <ul class="navbar-nav">
         {{#if currentUser}}
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Profile</a>
+            <a class="nav-link" href="/profile" tabindex="-1" aria-disabled="true">Profile</a>
           </li>
           {{!-- {{#checkRole currentUser 'ADMIN'}} --}}
-            <li class="nav-item">
+            {{!-- <li class="nav-item">
               <a class="nav-link" href="/users" tabindex="-1" aria-disabled="true">Users</a>
-            </li>
+            </li> --}}
           {{!-- {{/checkRole}} --}}
           <li class="nav-item">
             <form action="/logout" method="POST">
