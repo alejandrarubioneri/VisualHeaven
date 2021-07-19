@@ -1,3 +1,47 @@
+
+html {
+    padding: 0!important;
+    margin: 0!important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+    font-size: 18px;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+}
+
+p {
+    font-family: FunctionPro,Helvetica,Arial,TazuganeGothic,sans-serif;
+    font-weight: 300;
+}
+
+hr {
+    border: 2px solid rgb(173, 124, 59);
+    width: 372px;
+    margin: auto;
+}
+
+
+nav {
+    padding: 0!important;
+}
+
+
+.bg-container {
+    padding: 0;
+
+}
+
+
+.bg-dark {
+    background-color: black!important;
+}
+
 .web-cover {
     background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
     background-size: cover;
