@@ -8,6 +8,9 @@
       <ul class="navbar-nav">
         {{#if currentUser}}
           <li class="nav-item">
+            <a class="nav-link" href="/offers" tabindex="-1" aria-disabled="true">Job offers</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/profile" tabindex="-1" aria-disabled="true">Profile</a>
           </li>
           {{!-- {{#checkRole currentUser 'ADMIN'}} --}}
@@ -21,6 +24,9 @@
             </form>
           </li> 
         {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/offers" tabindex="-1" aria-disabled="true">Job offers</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/register" tabindex="-1" aria-disabled="true">Register</a>
           </li>

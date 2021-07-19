@@ -93,9 +93,9 @@ mongoose.connection.once('connected', () => {
             return User.create(usersToCreate)
         })
         .then((data) => {
-            console.log('entra');
             const offersToCreate = [];
             data.forEach((user) => {
+             for (let i = 0; i < 4; i++) {
                 const offer = {
                     title: faker.lorem.sentence(),
                     description: faker.lorem.paragraphs(),
@@ -103,12 +103,11 @@ mongoose.connection.once('connected', () => {
                     images: [faker.image.image(), faker.image.image()],
                 }
                 offersToCreate.push(offer)
-
+                }
             });
-            return Offer.create(offersToCreate)
+            return Offer.insertMany(offersToCreate)
         })
         .then(() => {
-            console.log('creado')
         })
         .catch(e => console.error(e))
         .finally(() => {
