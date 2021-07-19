@@ -3,6 +3,8 @@ const router = require('express').Router();
 const miscController = require('../controllers/misc.controller');
 const authController = require('../controllers/auth.controller');
 const usersController = require('../controllers/users.controller');
+const offersController = require('../controllers/offers.controller');
+
 
 const authMiddleware = require('../middlewares/auth.middleware');
 
@@ -27,5 +29,10 @@ router.post('/logout', authMiddleware.isAuthenticated, authController.logout);
 
 // Profile
 router.get('/profile', authMiddleware.isAuthenticated, usersController.profile)
+
+// Offers
+router.get('/offers', offersController.offers)
+// router.get('/offers/:offerId', offersController.offers)
+
 
 module.exports = router;
