@@ -1,7 +1,8 @@
 <h1>Job offers</h1>
 
 {{#each offers as |offer|}}
+    <img src="{{offer.image}}" >
     <p>{{offer.title}}</p>
     <p>{{offer.description}}</p>
-    <p>{{offer.author}}</p>
+    <p>{{offer.author.fullName}}</p>
 {{/each}}
