@@ -4,6 +4,8 @@ const miscController = require('../controllers/misc.controller');
 const authController = require('../controllers/auth.controller');
 const usersController = require('../controllers/users.controller');
 const offersController = require('../controllers/offers.controller');
+const professionalsController = require('../controllers/professionals.controller');
+
 
 
 const authMiddleware = require('../middlewares/auth.middleware');
@@ -32,7 +34,12 @@ router.get('/profile', authMiddleware.isAuthenticated, usersController.profile)
 
 // Offers
 router.get('/offers', offersController.offers)
-// router.get('/offers/:offerId', offersController.offers)
+router.get('/offers/:id', offersController.offersDetail)
+
+// Professionals
+router.get('/professionals', professionalsController.professionalsList)
+router.get('/professionals/:id', professionalsController.professionalDetail)
+
 
 
 module.exports = router;

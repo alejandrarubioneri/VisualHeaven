@@ -3,11 +3,25 @@ const Offer = require('../models/Offer.model');
 
 
 // Render de offers
-module.exports.offers = (req,res, next) => {
-    Offer.find()
+module.exports.offers = (req, res, next) => {
+      Offer.find()
+        .populate('author')
+        .then(offers => {
+          res.render('offers', {
+            offers: offers
+          });
+        })
+        .catch(next)
+  }   
+
+  // Render del detalle de las ofertas 
+  module.exports.offersDetail = (req, res, next) => {
+    Offer.findById(req.params.id)
     .populate('author')
-    .then(offers => {
-        res.render('offers', { offers: offers })
-          })
+    .then(offer => {
+      res.render('offerDetail', {
+        offer: offer
+      });
+    })
     .catch(next)
-}   
+  }
