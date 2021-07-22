@@ -1,5 +1,14 @@
 <div class="profile">
-<img src="{{currentUser.image}}" class="profile-img rounded-circle shadow">
-<h1>{{currentUser.email}}</h1> 
+  {{#if currentUser.image}}
+    <img class="rounded-circle shadow" src="{{currentUser.image}}" alt="{{currentUser.fullName}}">
+  {{/if}}
 
+  <h1 class="mt-3">{{currentUser.fullName}}</h1>
+  <p><strong>Email:</strong> {{currentUser.email}}</p>
 </div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mb-4">
+{{#each offers as |offer|}}
+    {{> offerCard offer}}
+{{/each}}
+</div> 

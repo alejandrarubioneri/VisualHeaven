@@ -15,9 +15,8 @@ const offerSchema = new mongoose.Schema(
             ref: 'User',
             required: [true, 'the job offer must have an author']
         },
-        images: {
-            type: [String],
-            default: []
+        image: {
+            type: String,
         }
     },
     {
