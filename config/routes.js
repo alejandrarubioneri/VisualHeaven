@@ -30,15 +30,17 @@ router.post('/login', authMiddleware.isNotAuthenticated, authController.doLogin)
 router.post('/logout', authMiddleware.isAuthenticated, authController.logout);
 
 // Profile
-router.get('/profile', authMiddleware.isAuthenticated, usersController.profile)
+router.get('/profile', authMiddleware.isAuthenticated, usersController.profile);
 
 // Offers
-router.get('/offers', offersController.offers)
-router.get('/offers/:id', offersController.offersDetail)
+router.get('/offers', offersController.offers);
+router.post('/offers', offersController.doOffers);
+router.get('/offers/:id', offersController.offersDetail);
+router.post('/offers/:id/apply', offersController.apply);
 
 // Professionals
-router.get('/professionals', professionalsController.professionalsList)
-router.get('/professionals/:id', professionalsController.professionalDetail)
+router.get('/professionals', professionalsController.professionalsList);
+router.get('/professionals/:id', professionalsController.professionalDetail);
 
 
 
