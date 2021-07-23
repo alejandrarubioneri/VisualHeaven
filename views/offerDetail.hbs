@@ -10,15 +10,17 @@
 </a>
 
 {{#if applied}}
-<button id="apply" class="btn btn-outline-dark"><i
+<button id="apply" value="{{offer._id}}" class="btn btn-outline-dark"><i
     class="bi bi-briefcase-fill"
   ></i>
-  Already applied</button>
+  <span>Already applied</span>
+  </button>
 {{else}}
-<button id="apply" class="btn btn-outline-dark"><i
+<button id="apply" value="{{offer._id}}" class="btn btn-dark"><i
     class="bi bi-briefcase-fill"
   ></i>
-  Apply now</button>
+  <span>Apply now</span>
+  </button>
 {{/if}}
 
 <script src="/js/offerDetail.js"></script>
