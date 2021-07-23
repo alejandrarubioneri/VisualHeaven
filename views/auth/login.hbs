@@ -1,18 +1,24 @@
-<h1>Login</h1>
+{{> navbarHome}}
 
-<form action="/login" method="POST">
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input name="email" value="{{user.email}}" type="email" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="email" required>
-    {{#if errorMessage}}
-      <div class="invalid-feedback">
-        {{errorMessage}}
+<div class="log-cover">
+  <div class="log-square">
+    <img class="mini-logo" src="/images/logos/logo-black.JPEG">
+  <h1>Welcome back!</h1>
+    <form action="/login" method="POST">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input name="email" value="{{user.email}}" type="email" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="email" required>
+        {{#if errorMessage}}
+          <div class="invalid-feedback">
+            {{errorMessage}}
+          </div>
+        {{/if}}
       </div>
-    {{/if}}
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input name="password" type="password" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">OK</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input name="password" type="password" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="password" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
