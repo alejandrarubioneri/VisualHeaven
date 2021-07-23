@@ -33,8 +33,14 @@ nav {
 
 navHome {
     padding-left: 58px!important;
+    padding-top: 10px;
     position: absolute!important;
+    display: flex;
+    justify-content: flex-end;
+
 }
+
+
 
 
 .collapse .navbar-collapse .justify-content-end {
@@ -56,13 +62,22 @@ navHome {
 }
 
 
+
 .web-cover {
     background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
     background-size: cover;
     background-color: rgb(214, 142, 49);
     background-blend-mode: multiply;
-    padding: 325px 0;
+    padding: 14.5% 0;
     margin: 0;
+}
+
+
+.web-cover > img {
+    display: flex;
+    margin: auto;
+    padding-bottom: 30px;
+
 }
 
 .container .web-cover {
