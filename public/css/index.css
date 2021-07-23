@@ -23,17 +23,18 @@ hr {
 }
 
 
-navhome {
-    padding-left: 58px!important;
-    position: absolute!important;
-}
-
 
 nav {
     padding-left: 30px!important;
-    background-color: black;
+    background-color: black!important;
 }
 
+
+
+navHome {
+    padding-left: 58px!important;
+    position: absolute!important;
+}
 
 
 .collapse .navbar-collapse .justify-content-end {
