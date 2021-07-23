@@ -42,7 +42,6 @@ navHome {
 
 
 
-
 .collapse .navbar-collapse .justify-content-end {
     display: flex;
     justify-content: flex-end;
@@ -183,5 +182,11 @@ ul {
     font-size: 10px;
     padding-top: 50px;
     padding-bottom: 30px;
+
+}
+
+
+#layout-offer {
+    margin-left 
 
 }
