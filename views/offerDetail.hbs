@@ -1,9 +1,17 @@
-<h1>Offer</h1>
+{{> navbarLog}}
+
+<div class="container-fluid bg-container"></div>
+
+    <div class="offers-cover">
+        
+        <h1>{{offer.title}}</h1>
+
+    </div>
+</div>
+
 
 <img src="{{offer.image}}" />
-<p>
-  {{offer.title}}
-</p>
+
 <p>{{offer.description}}</p>
 <a class="btn btn-link" href="/professionals/{{offer.author._id}}">
   {{offer.author.fullName}}

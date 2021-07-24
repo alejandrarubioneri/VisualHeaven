@@ -8,6 +8,8 @@ a {
     font-family: Futura,FunctionPro,Trebuchet MS,Arial,sans-serif; 
 }
 
+
+
 body {
     background-color: white;
 }
@@ -36,9 +38,7 @@ hr {
     background-color: black!important;
 }
 
-nav-logo {
-    padding-top: 0;
-}
+
 
 
 
@@ -216,8 +216,8 @@ ul {
 
 
 .log-square {
-    background-color: white;
-    background-blend-mode:overlay;
+    background-color: rgb(255, 255, 255);
+    background-blend-mode:multiply;
     padding: 30px;
     width: 600px;
     margin: 0 auto;
@@ -242,5 +242,84 @@ ul {
 
 form {
     padding:30px;
+}
+
+.navbar-brand-home {
+    opacity: 0;
+    pointer-events: none;
+    padding-top: 10px;
+    padding-left: 16.2px;
+}
+
+
+.professionals {
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+}
+
+.professionals > img {
+    width: 300px;
+}
+
+
+.professionals-cover {
+    background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
+    background-size: cover;
+    background-color: rgb(214, 49, 49);
+    background-blend-mode: multiply;
+    padding: 13% 0;
+    margin: 0;
+
+
+}
+
+.container .professionals-cover {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.professionals-cover > h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 100px;
+}
+
+
+.offers-cover {
+    background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
+    background-size: cover;
+    background-color: rgb(181, 49, 214);
+    background-blend-mode: multiply;
+    padding: 13% 0;
+    margin: 0;
+
+
+}
+
+.container .offers-cover {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.offers-cover > h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 100px;
+}
+
+.col {
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+    width: 600px;
 }
 
