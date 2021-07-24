@@ -1,20 +1,22 @@
 {{> navbarLog}}
 
-<div class="container-fluid bg-container"></div>
+    <div class="container-fluid bg-container"></div>
 
-    <div class="professionals-cover">
-        
-        <h1>Professionals</h1>
+      <div class="professionals-cover">
+          
+          <h1>Professionals</h1>
 
-    </div>
+      </div>
+  </div>
+
+<div class="layout-margin">
+    <ul class="professionals">
+      {{#each professionals as |professional|}}  
+        <img src="{{professional.image}}" class="card-img-top" /> 
+        <a class="btn btn-link" href="/professionals/{{professional._id}}">
+          {{professional.fullName}}
+        </a>
+      {{/each}}
+    </ul>
+
 </div>
-
-
-  <ul class="professionals">
-    {{#each professionals as |professional|}}  
-      <img src="{{professional.image}}" class="card-img-top" /> 
-      <a class="btn btn-link" href="/professionals/{{professional._id}}">
-        {{professional.fullName}}
-      </a>
-    {{/each}}
-  </ul>

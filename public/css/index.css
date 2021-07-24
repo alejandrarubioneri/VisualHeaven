@@ -265,7 +265,7 @@ form {
 
 
 .professionals-cover {
-    background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
+    background: url("../images/vistas/professionals.jpg") no-repeat center fixed;
     background-size: cover;
     background-color: rgb(214, 49, 49);
     background-blend-mode: multiply;
@@ -290,8 +290,13 @@ form {
 }
 
 
+.layout-margin {
+    margin: 100px 200px;
+}
+
+
 .offers-cover {
-    background: url("../images/vistas/foto-portada.png") no-repeat center fixed;
+    background: url("../images/vistas/offers.jpg") no-repeat center fixed;
     background-size: cover;
     background-color: rgb(181, 49, 214);
     background-blend-mode: multiply;
@@ -300,6 +305,14 @@ form {
 
 
 }
+
+.offers-cover > img {
+    background-size: cover;
+    background-color: rgb(181, 49, 214);
+    mix-blend-mode: multiply;
+    margin: 0;
+}
+
 
 .container .offers-cover {
     margin-left: 0;
@@ -321,5 +334,19 @@ form {
     justify-content: space-between;
     flex-direction:column;
     width: 600px;
+}
+
+
+.professional-nav {
+    background-size: cover;
+    height: 332px;
+    background-blend-mode: soft-light;
+    margin: 0;
+    position: absolute;
+}
+
+
+.profile {
+    padding-top: 200px;
 }
 

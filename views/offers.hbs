@@ -9,30 +9,33 @@
     </div>
 </div>
 
-<div class="col">
-  {{#each offers as |offer|}}
-      <div class="card h-100">
-        <img src="{{offer.image}}" class="card-img-top" />
-        <div class="card-body h-100">
-          <div>
-            <a class="btn btn-link" href="/offers/{{offer._id}}">
-              {{offer.title}}
-            </a>
-            <p>{{offer.description}}</p>
-          </div>
+<div class="layout-margin">
+    <div class="col">
+    {{#each offers as |offer|}}
+        <div class="card h-100">
+          <img src="{{offer.image}}" class="card-img-top" />
+          <div class="card-body h-100">
+            <div>
+              <a class="btn btn-link" href="/offers/{{offer._id}}">
+                {{offer.title}}
+              </a>
+              <p>{{offer.description}}</p>
+            </div>
 
-          <div>
-            <img
-              class="rounded-circle shadow"
-              src="{{offer.author.image}}"
-              width="20"
-            />
-            <a class="btn btn-link" href="/professionals/{{offer.author._id}}">
-              {{offer.author.fullName}}
-            </a>
+            <div>
+              <img
+                class="rounded-circle shadow"
+                src="{{offer.author.image}}"
+                width="20"
+              />
+              <a class="btn btn-link" href="/professionals/{{offer.author._id}}">
+                {{offer.author.fullName}}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
-  {{/each}}
+      </a>
+    {{/each}}
+  </div>
+
 </div>

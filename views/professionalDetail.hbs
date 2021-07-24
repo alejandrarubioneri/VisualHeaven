@@ -1,14 +1,23 @@
-<div class="profile">
-  {{#if professional.image}}
-    <img class="rounded-circle shadow" src="{{professional.image}}" alt="{{professional.fullName}}">
-  {{/if}}
 
-  <h1 class="mt-3">{{professional.fullName}}</h1>
-  <p><strong>Email:</strong> {{professional.email}}</p>
+<img src="../images/nav-background.png" class="professional-nav">
+{{> navbarLog}}
+
+
+
+
+<div class="layout-margin">
+    <div class="profile">
+    {{#if professional.image}}
+      <img class="rounded-circle shadow" src="{{professional.image}}" alt="{{professional.fullName}}">
+    {{/if}}
+
+    <h1 class="mt-3">{{professional.fullName}}</h1>
+    <p><strong>Email:</strong> {{professional.email}}</p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mb-4">
+  {{#each offers as |offer|}}
+      {{> offerCard offer}}
+  {{/each}}
+  </div> 
 </div>
-
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mb-4">
-{{#each offers as |offer|}}
-    {{> offerCard offer}}
-{{/each}}
-</div> 
