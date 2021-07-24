@@ -30,7 +30,31 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             maxLength: [500, 'write about you in 500 characters']
-        }
+        },
+        occupation: {
+            type: [String],
+            enum: [
+                'Producer',
+                'Video Editor',
+                'Studio Engineers',
+                'TV',
+                'Cinema',
+                'Director',
+                'Camera',
+                'Grip And Electric',
+                'Hair And Makeup',
+                'Locations',
+                'Music',
+                'Post Production',
+                'Sound',
+                'VFX',
+                'Special FX',
+                'Screenwriting',
+                'Stunts',
+                'Photographer',
+                'Other'
+            ]
+        },
     },
     {
         timestamps: true

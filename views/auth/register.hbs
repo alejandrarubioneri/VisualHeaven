@@ -26,12 +26,35 @@
       </div>
       <div class="mb-3">
         <label for="biography" class="form-label">Biograpgy:</label>
-        <textarea name="biography" rows="5" cols="80" value="{{user.biography}}" placeholder="Write about you in 500 characters" class="form-control {{#if errors.biography}}is-invalid{{/if}}" id="biograhy" required ></textarea>
+        <textarea name="biography" rows="5" cols="80" value="{{user.biography}}" placeholder="Write about you in 500 characters" class="form-control {{#if errors.biography}}is-invalid{{/if}}" id="biography" required ></textarea>
         {{#if errors.biography}}
           <div class="invalid-feedback">
             {{errors.biography}}
           </div>
         {{/if}}
+      </div>
+      <div class="mb-3">
+         <label for="occupation">Occupation:</label>
+          <select name="occupation" id="occupation" required multiple>
+              <option>Producer</option>
+              <option>Video Editor</option>
+              <option>Studio Engineers</option>
+              <option>TV</option>
+              <option>Cinema</option>
+              <option>Director</option>
+              <option>Camera</option>
+              <option>Grip And Electric</option>
+              <option>Hair And Makeup</option>
+              <option>Locations</option>
+              <option>Music</option>
+              <option>Post Production</option>
+              <option>Sound</option>
+              <option>VFX</option>
+              <option>Special FX</option>
+              <option>Screenwriting</option>
+              <option>Stunts</option>
+              <option>Other</option> 
+          </select>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Avatar:</label>

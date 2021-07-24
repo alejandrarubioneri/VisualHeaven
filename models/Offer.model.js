@@ -29,6 +29,7 @@ const offerSchema = new mongoose.Schema({
             'Special FX',
             'Screenwriting',
             'Stunts',
+            'Photographer',
             'Other'
         ]
     },

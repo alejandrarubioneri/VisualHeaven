@@ -8,8 +8,10 @@ module.exports.offers = (req, res, next) => {
   Offer.find()
     .populate('author')
     .then(offers => {
-      let { offersSearch: search } = req.query;
-      if(search) {
+      let {
+        offersSearch: search
+      } = req.query;
+      if (search) {
         search = search.toLowerCase()
       }
       let searchResults = offers.filter(
@@ -31,7 +33,7 @@ module.exports.offers = (req, res, next) => {
 
 // Formulario creación de oferta
 module.exports.doOffers = (req, res, next) => {
-  if (req.file) { 
+  if (req.file) {
     req.body.image = req.file.path
   }
   if (req.user) {
@@ -43,7 +45,8 @@ module.exports.doOffers = (req, res, next) => {
       res.redirect('/offers');
     })
     .catch((e) => {
-    res.render('error')});
+      res.render('error')
+    });
 };
 
 
@@ -52,19 +55,27 @@ module.exports.offersDetail = (req, res, next) => {
   Offer.findById(req.params.id)
     .populate('author')
     .then(offer => {
-      return Application.findOne({
-          user: req.user._id,
-          offer: req.params.id
-        })
-        .then(application => {
-          const applied = !!application; //Para convertir application a booleano
-          const isNotAuthor = offer.author._id.toString() !== req.user._id.toString()
-          res.render('offerDetail', {
-            offer: offer,
-            applied: applied,
-            isNotAuthor: isNotAuthor
-          });
-        })
+      if (req.user) {
+        return Application.findOne({
+            user: req.user._id,
+            offer: req.params.id
+          })
+          .then(application => {
+            const applied = !!application; //Para convertir application a booleano
+            const isNotAuthor = offer.author._id.toString() !== req.user._id.toString()
+            res.render('offerDetail', {
+              offer: offer,
+              applied: applied,
+              isNotAuthor: isNotAuthor
+            });
+          })
+      } else {
+        res.render('offerDetail', {
+          offer: offer,
+          applied: false,
+          isNotAuthor: false
+        });
+      }
     })
     .catch(next)
 }
@@ -77,7 +88,7 @@ module.exports.apply = (req, res, next) => {
     }) // Saber si ese usuario ya ha aplicado para borrar el botón
     .then(apply => {
       if (!apply) {
-       return Application.create({
+        return Application.create({
             user: req.user._id,
             offer: req.params.id
           })
@@ -87,7 +98,7 @@ module.exports.apply = (req, res, next) => {
       } else {
         res.json({
           applied: true // Borrar el botón
-        }) 
+        })
       }
     })
     .catch(next)
