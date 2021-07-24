@@ -3,13 +3,27 @@ const Offer = require('../models/Offer.model');
 const Application = require('../models/Application.model');
 
 
-// Render de offers
+// Render de offers con formulario de búsqueda
 module.exports.offers = (req, res, next) => {
   Offer.find()
     .populate('author')
     .then(offers => {
+      let { offersSearch: search } = req.query;
+      if(search) {
+        search = search.toLowerCase()
+      }
+      let searchResults = offers.filter(
+        (offersSearch) =>
+        offersSearch.title.toLowerCase().includes(search) ||
+        offersSearch.description.toLowerCase().includes(search) ||
+        offersSearch.categories.map(c => c.toLowerCase()).includes(search) ||
+        offersSearch.author.fullName.toLowerCase().includes(search)
+      );
+      if (!search) {
+        searchResults = offers
+      }
       res.render('offers', {
-        offers: offers
+        offers: searchResults,
       });
     })
     .catch(next)
@@ -17,12 +31,19 @@ module.exports.offers = (req, res, next) => {
 
 // Formulario creación de oferta
 module.exports.doOffers = (req, res, next) => {
-  console.log(req)
+  if (req.file) { 
+    req.body.image = req.file.path
+  }
+  if (req.user) {
+    req.body.author = req.user._id
+  }
+  console.log(req.body)
   Offer.create(req.body)
     .then((offer) => {
       res.redirect('/offers');
     })
-    .catch((e) => res.render('error'));
+    .catch((e) => {
+    res.render('error')});
 };
 
 
@@ -37,9 +58,11 @@ module.exports.offersDetail = (req, res, next) => {
         })
         .then(application => {
           const applied = !!application; //Para convertir application a booleano
+          const isNotAuthor = offer.author._id.toString() !== req.user._id.toString()
           res.render('offerDetail', {
             offer: offer,
-            applied: applied
+            applied: applied,
+            isNotAuthor: isNotAuthor
           });
         })
     })

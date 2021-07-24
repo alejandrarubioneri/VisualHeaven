@@ -100,7 +100,6 @@ mongoose.connection.once('connected', () => {
                     title: faker.lorem.sentence(),
                     description: faker.lorem.paragraphs(),
                     author: user._id,
-                    image: faker.image.image(),
                 }
                 offersToCreate.push(offer)
                 }

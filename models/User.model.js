@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema(
         },
         image: {
             type: String
+        },
+        biography: {
+            type: String,
+            required: true,
+            maxLength: [500, 'write about you in 500 characters']
         }
     },
     {

@@ -7,6 +7,7 @@
 
   <h1 class="mt-3">{{currentUser.fullName}}</h1>
   <p><strong>Email:</strong> {{currentUser.email}}</p>
+  <p>{{currentUser.biography}}</p>
 </div>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mb-4">
@@ -17,15 +18,39 @@
 <h1>Create a job offer</h1>
 <form action="/offers" method="POST" enctype="multipart/form-data">
   <div class="mb-3">
-    <label for="formFile" class="form-label">Select an image</label>
+    <label for="formFile" class="form-label">Select an image:</label>
     <input name="image" type="file" id="formFile" class="form-control" required>
   </div>
     <label for="title">Title</label>
     <input name="title" type="text" class="form-control" id="title" required>
   </div>
     <div class="mb-3">
-    <label for="description">Description</label>
+    <label for="description">Description:</label>
     <textarea name="description" rows="5" cols="80" placeholder="Write here the job description and requirements" required></textarea>
+  </div>
+    </div>
+   <div class="mb-3">
+    <label for="categories">Categories:</label>
+      <select name="categories" id="categories" required multiple>
+          <option>Producer</option>
+          <option>Video Editor</option>
+          <option>Studio Engineers</option>
+          <option>TV</option>
+          <option>Cinema</option>
+          <option>Director</option>
+          <option>Camera</option>
+          <option>Grip And Electric</option>
+          <option>Hair And Makeup</option>
+          <option>Locations</option>
+          <option>Music</option>
+          <option>Post Production</option>
+          <option>Sound</option>
+          <option>VFX</option>
+          <option>Special FX</option>
+          <option>Screenwriting</option>
+          <option>Stunts</option>
+          <option>Other</option> 
+      </select>
   </div>
   <button type="submit" class="btn btn-dark">Add offer</button>
 </form>

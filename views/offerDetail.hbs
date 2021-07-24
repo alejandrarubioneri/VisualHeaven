@@ -9,6 +9,7 @@
   {{offer.author.fullName}}
 </a>
 
+{{#if isNotAuthor}}
 {{#if applied}}
 <button id="apply" value="{{offer._id}}" class="btn btn-outline-dark"><i
     class="bi bi-briefcase-fill"
@@ -21,6 +22,7 @@
   ></i>
   <span>Apply now</span>
   </button>
+{{/if}}
 {{/if}}
 
 <script src="/js/offerDetail.js"></script>

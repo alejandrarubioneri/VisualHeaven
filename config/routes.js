@@ -34,7 +34,7 @@ router.get('/profile', authMiddleware.isAuthenticated, usersController.profile);
 
 // Offers
 router.get('/offers', offersController.offers);
-router.post('/offers', offersController.doOffers);
+router.post('/offers', upload.single('image'), offersController.doOffers);
 router.get('/offers/:id', offersController.offersDetail);
 router.post('/offers/:id/apply', offersController.apply);
 
