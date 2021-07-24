@@ -13,4 +13,21 @@
 {{#each offers as |offer|}}
     {{> offerCard offer}}
 {{/each}}
+
+<h1>Create a job offer</h1>
+<form action="/offers" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Select an image</label>
+    <input name="image" type="file" id="formFile" class="form-control" required>
+  </div>
+    <label for="title">Title</label>
+    <input name="title" type="text" class="form-control" id="title" required>
+  </div>
+    <div class="mb-3">
+    <label for="description">Description</label>
+    <textarea name="description" rows="5" cols="80" placeholder="Write here the job description and requirements" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-dark">Add offer</button>
+</form>
+
 </div> 
