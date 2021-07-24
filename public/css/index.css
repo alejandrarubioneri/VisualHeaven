@@ -8,6 +8,14 @@ a {
     font-family: Futura,FunctionPro,Trebuchet MS,Arial,sans-serif; 
 }
 
+body {
+    background-color: white;
+}
+
+html {
+    background-color: black;
+}
+
 
 p {
     font-family: FunctionPro,Helvetica,Arial,TazuganeGothic,sans-serif;
@@ -26,6 +34,10 @@ hr {
 .navbar .navbar-expand-lg .navbar-dark .bg-dark {
     padding-left: 30px!important;
     background-color: black!important;
+}
+
+nav-logo {
+    padding-top: 0;
 }
 
 
@@ -198,9 +210,10 @@ ul {
 .log-cover {
     background: url("../images/vistas/fondo-login.jpeg") no-repeat center fixed;
     background-size: cover;
-    padding: 13% 0;
+    padding: 14.5% 0;
     margin: 0;
 }
+
 
 .log-square {
     background-color: white;
@@ -218,10 +231,11 @@ ul {
     padding-top: 10px;
 }
 
+
 .reg-cover {
     background: url("../images/vistas/fondo-login.jpeg") no-repeat center fixed;
     background-size: cover;
-    padding: 7% 0;
+    padding: 8.5% 0;
     margin: 0;
 }
 
@@ -230,12 +244,3 @@ form {
     padding:30px;
 }
 
-
-.mini-logo {
-    width: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 0;
-    right: 0;
-}
