@@ -8,6 +8,15 @@ a {
     font-family: Futura,FunctionPro,Trebuchet MS,Arial,sans-serif; 
 }
 
+a {
+    color: rgb(214, 142, 49)!important;
+
+}
+
+a:hover {
+    color: rgb(182, 181, 181)!important;
+  }
+
 
 
 body {
@@ -33,13 +42,6 @@ hr {
 
 
 
-.navbar .navbar-expand-lg .navbar-dark .bg-dark {
-    padding-left: 30px!important;
-    background-color: black!important;
-}
-
-
-
 
 
 navHome {
@@ -48,6 +50,12 @@ navHome {
     position: absolute!important;
 }
 
+
+.nav-link {
+
+    color: rgba(255, 255, 255, 0.897)!important;
+
+}
 
 
 
@@ -328,6 +336,17 @@ form {
     margin: 0 100px;
 }
 
+
+.offers-cover > p {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 100px;
+    padding-top: 20px;
+}
+
+
+
 .col {
     padding: 100px;
     display: flex;
@@ -343,10 +362,16 @@ form {
     background-blend-mode: soft-light;
     margin: 0;
     position: absolute;
+    width: 100%;
 }
 
 
 .profile {
     padding-top: 200px;
+}
+
+
+.layout-margin-p {
+    margin: 0 200px 100px;
 }
 
