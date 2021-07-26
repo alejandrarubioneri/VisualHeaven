@@ -25,4 +25,12 @@
 {{/if}}
 {{/if}}
 
+{{#checkRole currentUser 'ADMIN'}}
+<button id="delete" value="{{../offer._id}}" class="btn btn-dark btn-delete-offer"><i
+    class="bi bi-trash"
+  ></i>
+  <span>Delete</span>
+  </button>
+{{/checkRole}}
+
 <script src="/js/offerDetail.js"></script>

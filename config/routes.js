@@ -36,7 +36,8 @@ router.get('/profile', authMiddleware.isAuthenticated, usersController.profile);
 router.get('/offers', offersController.offers);
 router.post('/offers', upload.single('image'), offersController.doOffers);
 router.get('/offers/:id', offersController.offersDetail);
-router.post('/offers/:id/apply', offersController.apply);
+router.delete('/offers/:id', offersController.offerDelete);
+router.post('/offers/:id/apply', authMiddleware.isAuthenticated, offersController.apply);
 
 // Professionals
 router.get('/professionals', professionalsController.professionalsList);

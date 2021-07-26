@@ -55,6 +55,11 @@ const userSchema = new mongoose.Schema(
                 'Other'
             ]
         },
+        role: {
+            type: String,
+            enum: ['ADMIN', 'USER'],
+            default: 'USER'
+        },
     },
     {
         timestamps: true
@@ -63,6 +68,13 @@ const userSchema = new mongoose.Schema(
 
 // Encriptado de contraseñas
 userSchema.pre('save', function(next) {
+    // Para comprobar si el usuario es ADMIN o no
+    if (this.email === process.env.ADMIN_EMAIL) {
+        this.role = 'ADMIN'
+    } else {
+        this.role = 'USER'
+    }
+
     if (this.isModified('password')) { // Comprobar si se ha modificado la password
         bcrypt.hash(this.password, SALT_ROUNDS) // Encriptar la contraseña pasando por las salt rounds
         .then((hash) => {

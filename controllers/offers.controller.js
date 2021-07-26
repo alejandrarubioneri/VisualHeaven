@@ -103,3 +103,16 @@ module.exports.apply = (req, res, next) => {
     })
     .catch(next)
 }
+
+// Borrar ofertas
+module.exports.offerDelete = (req, res, next) => {
+  Offer.findByIdAndDelete(req.params.id)
+  .then(result => {
+    if (!result) {
+      res.json({ deleted: false })
+    } else {
+      res.json({ deleted: true })
+    }
+  })
+  .catch(next)
+}

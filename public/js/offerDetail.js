@@ -1,20 +1,40 @@
-const button = document.getElementById('apply'); // Dónde está el botón
 
-button.onclick = () => {
-    button.classList.add('disabled') // Deshabilitar botón para evitar más peticiones mientr
-    const offerId = button.value;
+const applyButton = document.getElementById('apply'); // Dónde está el botón
 
-    axios.post(`http://localhost:3000/offers/${offerId}/apply`) // Dónde apunta Axios
-        .then((response) => { 
-            // Cambiar las clases
-            button.classList.toggle('btn-outline-dark')
-            button.classList.toggle('btn-dark')
+// Aplicar a ofertas
+if (applyButton) {
+    applyButton.onclick = () => {
+        applyButton.classList.add('disabled') // Deshabilitar botón para evitar más peticiones mientr
+        const offerId = applyButton.value;
+    
+        axios.post(`http://localhost:3000/offers/${offerId}/apply`) // Dónde apunta Axios
+            .then((response) => {
+                // Cambiar las clases
+                applyButton.classList.toggle('btn-outline-dark')
+                applyButton.classList.toggle('btn-dark')
+    
+                // Cambiar los textos
+                applyButton.querySelector('span').textContent = !response.data.applied ? 'Already applied' : 'Apply now'
+            })
+            .catch(e => console.error(e))
+            .finally(() => { // Quitar clase al botón
+                applyButton.classList.remove('disabled')
+            })
+    }
+}
 
-            // Cambiar los textos
-            button.querySelector('span').textContent = !response.data.applied ? 'Already applied' : 'Apply now'
+
+// Borrar ofertas
+const deleteButton = document.getElementById('delete');
+if (deleteButton) {
+    deleteButton.onclick = () => {
+    const offerId = deleteButton.value;
+    axios.delete(`http://localhost:3000/offers/${offerId}`) // Dónde apunta Axios
+        .then((response) => {
+            if (response.data.deleted) {
+                window.location.href = '/offers'
+            }
         })
         .catch(e => console.error(e))
-        .finally (() => { // Quitar clase al botón
-            button.classList.remove('disabled')
-        })
+    }
 }

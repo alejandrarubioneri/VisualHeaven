@@ -23,7 +23,7 @@ app.use(passport.session());
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
-//require("./config/hbs.config")
+require("./config/hbs.config")
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
