@@ -10,6 +10,12 @@
   </div>
 
 <div class="layout-margin">
+  <div class="professionalsSearch">
+  <form action="/professionals" method="GET">
+    <input type="text" name="professionalsSearch" placeholder='Who are you looking for?' />
+    <button type="submit">Find</button>
+  </form>
+  </div>
     <ul class="professionals">
       {{#each professionals as |professional|}}  
         <img src="{{professional.image}}" class="card-img-top" /> 

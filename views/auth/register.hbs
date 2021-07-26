@@ -6,7 +6,7 @@
 
     <form action="/register" method="POST" enctype="multipart/form-data" >
       <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
+        <label for="email" class="form-label">Email address:</label>
         <input name="email" value="{{user.email}}" type="email" class="form-control {{#if errors.email}}is-invalid{{/if}}" id="email" required>
         {{#if errors.email}}
           <div class="invalid-feedback">
@@ -15,7 +15,7 @@
         {{/if}}
       </div>
         <div class="mb-3">
-        <label for="fullName" class="form-label">Full name</label>
+        <label for="fullName" class="form-label">Full name:</label>
         <input name="fullName" value="{{user.fullName}}" type="text" class="form-control {{#if errors.fullName}}is-invalid{{/if}}" id="fullName" required>
         {{#if errors.fullName}}
           <div class="invalid-feedback">
@@ -24,11 +24,43 @@
         {{/if}}
       </div>
       <div class="mb-3">
-        <label for="formFile" class="form-label">Avatar</label>
+        <label for="biography" class="form-label">Biograpgy:</label>
+        <textarea name="biography" rows="5" cols="80" value="{{user.biography}}" placeholder="Write about you in 500 characters" class="form-control {{#if errors.biography}}is-invalid{{/if}}" id="biography" required ></textarea>
+        {{#if errors.biography}}
+          <div class="invalid-feedback">
+            {{errors.biography}}
+          </div>
+        {{/if}}
+      </div>
+      <div class="mb-3">
+         <label for="occupation">Occupation:</label>
+          <select name="occupation" id="occupation" required multiple>
+              <option>Producer</option>
+              <option>Video Editor</option>
+              <option>Studio Engineers</option>
+              <option>TV</option>
+              <option>Cinema</option>
+              <option>Director</option>
+              <option>Camera</option>
+              <option>Grip And Electric</option>
+              <option>Hair And Makeup</option>
+              <option>Locations</option>
+              <option>Music</option>
+              <option>Post Production</option>
+              <option>Sound</option>
+              <option>VFX</option>
+              <option>Special FX</option>
+              <option>Screenwriting</option>
+              <option>Stunts</option>
+              <option>Other</option> 
+          </select>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Avatar:</label>
         <input name="image" type="file" id="formFile" class="form-control" >
       </div>
       <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
+        <label for="password" class="form-label">Password:</label>
         <input name="password" type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password" required>
         {{#if errors.password}}
           <div class="invalid-feedback">
