@@ -8,3 +8,29 @@
 <a class="btn btn-link" href="/professionals/{{offer.author._id}}">
   {{offer.author.fullName}}
 </a>
+
+{{#if isNotAuthor}}
+{{#if applied}}
+<button id="apply" value="{{offer._id}}" class="btn btn-outline-dark"><i
+    class="bi bi-briefcase-fill"
+  ></i>
+  <span>Already applied</span>
+  </button>
+{{else}}
+<button id="apply" value="{{offer._id}}" class="btn btn-dark"><i
+    class="bi bi-briefcase-fill"
+  ></i>
+  <span>Apply now</span>
+  </button>
+{{/if}}
+{{/if}}
+
+{{#checkRole currentUser 'ADMIN'}}
+<button id="delete" value="{{../offer._id}}" class="btn btn-dark btn-delete-offer"><i
+    class="bi bi-trash"
+  ></i>
+  <span>Delete</span>
+  </button>
+{{/checkRole}}
+
+<script src="/js/offerDetail.js"></script>
