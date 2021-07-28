@@ -1,10 +1,11 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-left: 30px!important;background-color: black!important;padding-top :0;padding-bottom: 0;">
+<div class="navHome">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-left: 30px!important;padding-top :0;padding-bottom: 0;">
     <div class="container">
 
       
       <a class="navbar-brand" href="/">
       <img src="/images/logos/logo-white.JPEG" style="
-      width: 100px;">
+      width: 100px;mix-blend-mode: screen;">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +39,11 @@
                 aria-disabled="true"
               >Profile</a>
             </li>
+            {{!-- {{#checkRole currentUser 'ADMIN'}} --}}
+            {{! <li class="nav-item">
+                <a class="nav-link" href="/users" tabindex="-1" aria-disabled="true">Users</a>
+              </li> }}
+            {{!-- {{/checkRole}} --}}
             <li class="nav-item">
               <form action="/logout" method="POST">
                 <button class="nav-link btn btn-link">Logout</button>
@@ -65,4 +71,5 @@
       </div>
     </div>
   </nav>
+</div>
 

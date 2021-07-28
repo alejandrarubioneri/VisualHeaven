@@ -1,4 +1,4 @@
-{{> navbarLog}}
+{{> navbar}}
 
     <div class="container-fluid bg-container"></div>
 
@@ -10,11 +10,11 @@
   </div>
 
 <div class="layout-margin">
-  <div class="professionalsSearch">
-  <form action="/professionals" method="GET">
-    <input type="text" name="professionalsSearch" placeholder='Who are you looking for?' />
-    <button type="submit">Find</button>
-  </form>
+  <div class="professionals-search">
+    <form action="/professionals" method="GET" class="style-search">
+      <input type="text" name="professionalsSearch" placeholder='Who are you looking for?' />
+      <button type="submit">Find</button>
+    </form>
   </div>
     <ul class="professionals">
       {{#each professionals as |professional|}}  

@@ -1,4 +1,4 @@
-{{> navbarLog}}
+{{> navbar}}
 
 <div class="reg-cover">
   <div class="log-square">
@@ -24,7 +24,7 @@
         {{/if}}
       </div>
       <div class="mb-3">
-        <label for="biography" class="form-label">Biograpgy:</label>
+        <label for="biography" class="form-label">Biography:</label>
         <textarea name="biography" rows="5" cols="80" value="{{user.biography}}" placeholder="Write about you in 500 characters" class="form-control {{#if errors.biography}}is-invalid{{/if}}" id="biography" required ></textarea>
         {{#if errors.biography}}
           <div class="invalid-feedback">
