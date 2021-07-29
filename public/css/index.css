@@ -228,7 +228,7 @@ ul {
 .log-square {
     background-color: rgb(255, 255, 255);
     background-blend-mode:multiply;
-    padding: 30px;
+    padding: 50px;
     width: 600px;
     margin: 0 auto;
     border-radius: 13px;
@@ -280,6 +280,16 @@ ul {
 
 }
 
+.professionals-cover > p {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 100px;
+    padding-top: 20px;
+}
+
+
+
 .container .professionals-cover {
     margin-left: 0;
     margin-right: 0;
@@ -296,7 +306,7 @@ ul {
 
 
 .layout-margin {
-    margin: 0 109px;
+    margin: 0 139px;
 }
 
 
@@ -317,6 +327,29 @@ ul {
     mix-blend-mode: multiply;
     margin: 0;
 }
+
+
+
+.offers-detail-cover {
+    background-color: rgb(181, 49, 214);
+    background-blend-mode: multiply;
+    margin: 0;
+}
+
+.offers-detail-cover > img {
+    width: 100%;
+    background-color: rgb(181, 49, 214);
+    mix-blend-mode: multiply;
+    margin: 0;
+}
+
+.offers-detail-cover > h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 100px;
+}
+
 
 
 .container .offers-cover {
@@ -396,7 +429,7 @@ ul {
 
 
 
-.offers-search > button {
+.style-search > button {
     background-color: rgb(214, 142, 49)!important;
     border: none!important;
     color: white!important;
@@ -404,12 +437,12 @@ ul {
     padding: 6px 13px!important;
 }
 
-.offers-search > button:hover {
+.style-search > button:hover {
     background-color: rgb(243, 162, 55)!important;
     color: white!important;
 }
 
-.offers-search > input {
+.style-search > input {
     padding: 5px 10px;
     color: rgb(42, 42, 42);
     width: 500px;
@@ -421,10 +454,16 @@ ul {
 }
 
 
-
-
-
-
 .card {
     padding: 0;
+}
+
+
+.categories {
+    display: flex;
+    justify-content: center;
+}
+
+.categories > p {
+    font-family: Futura,FunctionPro,Trebuchet MS,Arial,sans-serif;
 }

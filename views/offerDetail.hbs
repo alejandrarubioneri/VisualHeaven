@@ -1,9 +1,18 @@
 {{> navbar}}
 
 <div class="container-fluid bg-container">
+    <style>
+      .offers-detail-cover {
+    background: url("{{offer.image}}") no-repeat center fixed;
+    background-size: cover;
+    background-color: rgb(181, 49, 214);
+    background-blend-mode: multiply;
+    padding: 13% 0;
+    margin: 0;
+}
+    </style>
+    <div class="offers-detail-cover">
 
-    <div class="offers-cover">
-      <img src="{{offer.image}}"/>
         
         <h1>{{offer.title}}</h1>
 
@@ -11,7 +20,7 @@
 </div>
 
 <div class="layout-margin">
-   <div>
+   <div class="categories">
       {{#each offer.categories as |category|}}
          <p>{{category}}</p>
       {{/each}}
