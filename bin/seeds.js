@@ -96,13 +96,22 @@ mongoose.connection.once('connected', () => {
                     "gender": "female"
                 }),
             }, {
-                fullName: 'Alan E. Ball',
-                email: 'alanball@gmail.com',
+                fullName: 'Hunter Schafer',
+                email: 'hunterschafer@gmail.com',
                 password: '12345678',
-                occupation: ['Producer', 'Director', 'Screenwriting'],
-                biography: 'Alan Erwin Ball (born May 13, 1957) is an American writer, director, and producer for television, film, and theater.',
+                occupation: ['Producer', 'Photographer'],
+                biography: 'Hunter Schafer (born December 31, 1998) is an American fashion model, actress, and LGBTQ rights activist. In 2019, she made her acting debut portraying Jules in the HBO series Euphoria.',
                 image: toonavatar.generate_avatar({
-                    "gender": "male"
+                    "gender": "female"
+                }),
+            },   {
+                fullName: 'Visual Heaven',
+                email: 'visualheaven@gmail.com',
+                password: '12345678',
+                occupation: ['Other'],
+                biography: 'We are Visual Heaven',
+                image: toonavatar.generate_avatar({
+                    "gender": "female"
                 }),
             }]
             return User.create(usersToCreate)
