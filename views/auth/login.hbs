@@ -1,8 +1,7 @@
-{{> navbarHome}}
+{{> navbar}}
 
 <div class="log-cover">
   <div class="log-square">
-    <img class="mini-logo" src="/images/logos/logo-black.JPEG">
   <h1>Welcome back!</h1>
     <form action="/login" method="POST">
       <div class="mb-3">
@@ -18,7 +17,7 @@
         <label for="password" class="form-label">Password</label>
         <input name="password" type="password" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="password" required>
       </div>
-      <button type="submit" class="btn btn-primary">OK</button>
+      <button type="submit" class="btn btn-primary">OK!</button>
     </form>
   </div>
 </div>
