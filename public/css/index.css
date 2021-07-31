@@ -69,6 +69,7 @@ hr {
 
 
 
+
 .bg-container {
     padding: 0;
 
@@ -135,6 +136,7 @@ hr {
     text-align: center;
     font-size: 37px;
     margin-top: 70px;
+    margin-bottom: 77px
 }
 
 
@@ -220,7 +222,7 @@ ul {
 .log-cover {
     background: url("../images/vistas/fondo-login.jpeg") no-repeat center fixed;
     background-size: cover;
-    padding: 14.5% 0;
+    padding: 13% 0;
     margin: 0;
 }
 
@@ -228,7 +230,7 @@ ul {
 .log-square {
     background-color: rgb(255, 255, 255);
     background-blend-mode:multiply;
-    padding: 50px;
+    padding: 77px;
     width: 600px;
     margin: 0 auto;
     border-radius: 13px;
@@ -306,7 +308,8 @@ ul {
 
 
 .layout-margin {
-    margin: 0 139px;
+    margin: 0 153px;
+    margin-bottom: 40px;
 }
 
 
@@ -401,7 +404,7 @@ ul {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0 41%;
+    margin: 0 300px;
     text-align: center;
 }
 
@@ -409,6 +412,10 @@ ul {
 .profile > mt-3 {
     padding-top: 50px!important;
     
+}
+
+.profile > .mt-3 {
+    font-size: 24px;
 }
 
 
@@ -422,11 +429,6 @@ ul {
     justify-content: center;
     margin: 50px;
 }
-
-.professionals-search > .style-search {
-    width: 100%;
-}
-
 
 
 .style-search > button {
@@ -454,6 +456,20 @@ ul {
 }
 
 
+.btn-primary {
+    background-color: rgb(214, 142, 49)!important;
+    border: none!important;
+    margin-top: 20px;
+
+}
+
+
+.btn-primary > button:hover {
+    background-color: rgb(243, 162, 55)!important;
+}
+
+
+
 .card {
     padding: 0;
 }
@@ -461,9 +477,74 @@ ul {
 
 .categories {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    align-items: center;
+    background-color: #0000000a;
+    border-radius: 37px;
+    width: 723px;
+    text-align: center;
 }
 
 .categories > p {
     font-family: Futura,FunctionPro,Trebuchet MS,Arial,sans-serif;
+    margin-top:13px;
+    width: 500px!important;
 }
+
+
+.occupation {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.occupation > p {
+    margin-top: 20px;
+    text-transform:uppercase!important;
+    font-size: 13px;
+}
+
+
+.profile > .rounded-circle {
+    width: 168px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+
+.bio {
+    color:rgb(83, 83, 83);
+}
+
+.add-offer {
+    margin: 0 auto;
+    width: 600px;
+    margin-bottom: 80px;
+}
+
+
+.add-offer > h1 {
+    text-align: center!important;
+    font-size: 37px!important;
+    margin-top: 102px!important;
+}
+
+
+.card-group {
+    margin-bottom: 80px;
+}
+
+
+select, textarea {
+    border-color: lightgray;
+}
+
+
+.tusmuertos {
+    display: flex;
+    flex-direction: column;
+}
+
